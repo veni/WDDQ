@@ -180,14 +180,13 @@
                 // 显示湿度
                 $("#humiid").text(msgjson.dht11_humidity+'%');
                 // 温度超过29则红灯亮，20-29之间则绿灯亮，低于20黄灯亮
-				//温度超过3则红灯亮，-2-3之间则绿灯亮，低于-2黄灯亮 20150812
-                if(tempval > "3"){
+                if(tempval > "29"){
                     led_red();
                     $("#rgbimgid").attr("src", "./image/02-red.svg");
-                }else if(tempval < "3" && (tempval > "-2")){
+                }else if(tempval < "30" && (tempval > "19")){
                     led_green();
                     $("#rgbimgid").attr("src", "./image/02-green.svg");
-                }else if(tempval < "-2"){
+                }else if(tempval < "20"){
                     led_yellow();
                     $("#rgbimgid").attr("src", "./image/02-yellow.svg");
                 }
